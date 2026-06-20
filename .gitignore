@@ -1,16 +1,21 @@
+# Virtual Environment
 venv/
 venv312/
 
+# Python Cache
 __pycache__/
 *.pyc
 
+# Environment Variables
 .env
 
-results.csv
-emails.csv
-
-.vscode/
+# Generated Files
 emails.csv
 emails.pdf
+results.csv
+
+# Backup Files
 *.bak
+
+# VS Code
 .vscode/
