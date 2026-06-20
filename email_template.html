@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    /* Clean modern email-safe styling. Premailer will inline these. */
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #eef1f7;
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .wrapper {
+      width: 100%;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: auto;
+      background: #ffffff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .header {
+      background: linear-gradient(120deg, #0f62fe, #2d9cdb, #6fcf97);
+      color: white;
+      padding: 28px 32px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      background: white;
+      padding: 6px;
+      object-fit: contain;
+    }
+
+    .title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .content {
+      padding: 32px;
+      text-align: left;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .skills {
+      margin: 18px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      background: #eef6ff;
+      color: #0062ff;
+      padding: 6px 12px;
+      font-size: 13px;
+      border-radius: 16px;
+      border: 1px solid #d1e3ff;
+    }
+
+    .highlight-box {
+      background: #f9fbff;
+      border-left: 4px solid #0f62fe;
+      padding: 14px 18px;
+      margin: 22px 0;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 26px;
+      padding: 12px 22px;
+      background: #0f62fe;
+      color: white;
+      border-radius: 6px;
+      font-size: 16px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(15, 98, 254, 0.3);
+    }
+
+    .cta:hover {
+      opacity: 0.92;
+    }
+
+    .footer {
+      padding: 22px;
+      font-size: 12px;
+      background: #fafafa;
+      color: #777;
+      text-align: center;
+      border-top: 1px solid #e6e6e6;
+    }
+
+    @media (max-width: 480px) {
+      .content {
+        padding: 22px;
+        font-size: 14px;
+      }
+
+      .header {
+        padding: 20px;
+      }
+
+      .title {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+
+      <!-- Header section -->
+      <div class="header">
+        <img src="cid:logo_cid" alt="Logo" class="logo" />
+        <div class="title">
+          {{ company_name or "Python Developer Application" }}
+        </div>
+      </div>
+
+      <!-- Body content -->
+      <div class="content">
+        <p>Hi{{ recipient_name and (' ' + recipient_name) or '' }},</p>
+
+        <p>I hope you’re doing well.</p>
+
+        <p>
+          I’m <strong>{{ sender_name or "Harshavardhan" }}</strong>, a Python Developer with 
+          <strong>around 4 years</strong> experience in backend engineering, API development,
+          and cloud-ready systems.
+        </p>
+
+        <div class="highlight-box">
+          I’m reaching out to explore any opportunities for a Python Developer role at 
+          <strong>{{ company_name or "your organization" }}</strong>.
+        </div>
+
+        <!-- Skills -->
+        <div class="skills">
+          <div class="chip">Python</div>
+          <div class="chip">Django</div>
+          <div class="chip">FastAPI</div>
+          <div class="chip">PostgreSQL</div>
+          <div class="chip">REST APIs</div>
+          <div class="chip">Docker</div>
+          <div class="chip">CI/CD</div>
+        </div>
+
+        <p>
+          If you're open to discussing opportunities or reviewing my experience,
+          I’d love to connect.  
+        </p>
+
+        <p>
+          You can view my LinkedIn profile here:<br>
+          👉 <a href="{{ www.linkedin.com/in/harsha2323 }}" style="color:#0f62fe">{{ linkedin_url }}</a>
+        </p>
+
+        <!-- CTA Button -->
+        <a class="cta" href="{{ call_to_action_url or 'mailto:' + sender_email }}">
+          {{ call_to_action_text or "Let’s Talk" }}
+        </a>
+
+        <p style="margin-top:26px;">
+          Best regards,<br>
+          <strong>{{ sender_name or "Harshavardhan" }}</strong>
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        Sent by {{ sender_name or "Harshavardhan" }}  
+        • <a href="{{ company_website or '#' }}" style="color:#0f62fe">Website</a>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
