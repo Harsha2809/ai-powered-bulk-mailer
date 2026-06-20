@@ -10,3 +10,7 @@ results.csv
 emails.csv
 
 .vscode/
+emails.csv
+emails.pdf
+*.bak
+.vscode/
